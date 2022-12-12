@@ -26,6 +26,19 @@ public class User {
         this.dateCreated = LocalDateTime.now();
     }
 
+    public User(int userId, String userName, String password, String fName, String lName, double balance, String email, String location, String contactNumber, LocalDateTime dateCreated) {
+        this.userId = userId;
+        this.userName = userName;
+        this.password = password;
+        this.fName = fName;
+        this.lName = lName;
+        Balance = balance;
+        this.email = email;
+        this.location = location;
+        this.contactNumber = contactNumber;
+        this.dateCreated = dateCreated;
+    }
+
     public int getUserId() {
         return userId;
     }
