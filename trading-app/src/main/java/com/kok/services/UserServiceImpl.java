@@ -14,6 +14,17 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User storeUserAccount(User user) {
+
+        if(userRepository.findByEmail(user.getEmail()) != null) throw new RuntimeException("Email already exists!");
+        else if(userRepository.findByuserName(user.getUserName()) != null) throw new RuntimeException("UserName already exists!");
+
         return this.userRepository.save(user);
+    }
+
+    @Override
+    public User loginUser(User user){
+        User loadedUser = this.userRepository.findByuserName(user.getUserName());
+        if(loadedUser == null) throw new RuntimeException("Incorrect username!");
+        return loadedUser;
     }
 }
