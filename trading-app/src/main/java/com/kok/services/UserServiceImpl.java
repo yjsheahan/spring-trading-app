@@ -5,8 +5,6 @@ import com.kok.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -16,11 +14,17 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User storeUserAccount(User user) {
+
+        if(userRepository.findByEmail(user.getEmail()) != null) throw new RuntimeException("Email already exists!");
+        else if(userRepository.findByuserName(user.getUserName()) != null) throw new RuntimeException("UserName already exists!");
+
         return this.userRepository.save(user);
     }
 
     @Override
-    public List<User> loginUser(User user) {
-        return this.userRepository.findByuserName(user.getUserName());
+    public User loginUser(User user){
+        User loadedUser = this.userRepository.findByuserName(user.getUserName());
+        if(loadedUser == null) throw new RuntimeException("Incorrect username!");
+        return loadedUser;
     }
 }
