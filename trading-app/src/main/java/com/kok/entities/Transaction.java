@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Getter @Setter @ToString
-public class Transaction {
+public class Transaction{
 
     @Id @GeneratedValue
     private int orderId;
@@ -24,6 +24,4 @@ public class Transaction {
     public Transaction() {
         this.dateCreated = LocalDateTime.now();
     }
-
-
 }
