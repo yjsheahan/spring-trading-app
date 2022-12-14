@@ -14,6 +14,7 @@ public class BuyServiceImpl implements BuyService{
     @Override
     public Transaction createBid(String nasdaq, Transaction transaction) {
         transaction.setNasdaq(nasdaq);
+        transaction.setType("buy");
         return this.buyRepository.save(transaction);
     }
 }
