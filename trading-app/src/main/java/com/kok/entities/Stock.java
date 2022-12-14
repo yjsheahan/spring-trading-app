@@ -4,8 +4,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 @Entity
+@Getter @Setter @ToString
 public class Stock {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,38 +31,6 @@ public class Stock {
         this.stockId = stockId;
         this.stockName = stockName;
         this.nasdaq = nasdaq;
-        this.currentPrice = currentPrice;
-    }
-
-    public int getStockId() {
-        return stockId;
-    }
-
-    public void setStockId(int stockId) {
-        this.stockId = stockId;
-    }
-
-    public String getStockName() {
-        return stockName;
-    }
-
-    public void setStockName(String stockName) {
-        this.stockName = stockName;
-    }
-
-    public String getNasdaq() {
-        return nasdaq;
-    }
-
-    public void setNasdaq(String nasdaq) {
-        this.nasdaq = nasdaq;
-    }
-
-    public double getCurrentPrice() {
-        return currentPrice;
-    }
-
-    public void setCurrentPrice(double currentPrice) {
         this.currentPrice = currentPrice;
     }
 }
