@@ -13,6 +13,7 @@ public class SellServiceImpl implements SellService {
     @Override
     public Transaction createAsk(Transaction transaction, String nasdaq) {
         transaction.setNasdaq(nasdaq);
+        transaction.setType("sell");
         return this.sellRepository.save(transaction);
     }
 
