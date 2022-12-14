@@ -16,7 +16,6 @@ public class Transaction {
     @Id @GeneratedValue
     private int orderId;
     private LocalDateTime dateCreated;
-    private int stockId;
     private String nasdaq;
     private String type;
     private int size;
