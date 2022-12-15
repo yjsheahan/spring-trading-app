@@ -1,10 +1,8 @@
 package com.kok.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NonNull;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -17,22 +15,22 @@ public class User {
     @Id @GeneratedValue
     private int userId;
 
-    @Column(nullable=false, length=50, unique=true)
+    @NonNull @Column(unique = true)
     private String userName;
-    @Column(nullable=false, length=50)
+    @NonNull
     private String password;
-    @Column(nullable=false, length=50)
+    @NonNull
     private String fName;
-    @Column(nullable=false, length=50)
+    @NonNull
     private String lName;
-    @Column(nullable=false)
+    @NonNull
     private double Balance;
-    @Column(nullable=false, length=100, unique=true)
+    @NonNull @Column(unique = true)
     private String email;
-    @Column(nullable=false, length=50)
+    @NonNull
     private String location;
     private String contactNumber;
-    @Column(nullable=false)
+    @NonNull
     private LocalDateTime dateCreated;
 
     public User() {
