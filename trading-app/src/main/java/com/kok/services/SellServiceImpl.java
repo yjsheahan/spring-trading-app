@@ -15,6 +15,7 @@ public class SellServiceImpl implements SellService {
     @Override
     public Transaction createAsk(Transaction transaction, String nasdaq) {
         transaction.setNasdaq(nasdaq);
+<<<<<<< HEAD
 
         List<Transaction> buyList = this.sellRepository.findAllByTypeAndStockOrderByPrice(nasdaq, "buy");
         for(Transaction t : buyList){
@@ -24,6 +25,9 @@ public class SellServiceImpl implements SellService {
                 t.setSize(0);
             }
         }
+=======
+        transaction.setType("sell");
+>>>>>>> main
         return this.sellRepository.save(transaction);
     }
 
