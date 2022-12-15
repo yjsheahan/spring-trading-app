@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/trading-app/demo.iml" filepath="$PROJECT_DIR$/trading-app/demo.iml" />
+=======
+>>>>>>> main
       <module fileurl="file://$PROJECT_DIR$/.idea/spring-trading-app.iml" filepath="$PROJECT_DIR$/.idea/spring-trading-app.iml" />
     </modules>
   </component>
