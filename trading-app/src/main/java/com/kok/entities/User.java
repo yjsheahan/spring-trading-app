@@ -20,9 +20,9 @@ public class User {
     @NonNull
     private String password;
     @NonNull
-    private String fName;
+    private String fname;
     @NonNull
-    private String lName;
+    private String lname;
     @NonNull
     private double Balance;
     @NonNull @Column(unique = true)
@@ -41,8 +41,8 @@ public class User {
         this.userId = userId;
         this.userName = userName;
         this.password = password;
-        this.fName = fName;
-        this.lName = lName;
+        this.fname = fName;
+        this.lname = lName;
         Balance = balance;
         this.email = email;
         this.location = location;

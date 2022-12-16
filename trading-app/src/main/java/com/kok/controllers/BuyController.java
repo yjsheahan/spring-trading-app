@@ -14,9 +14,9 @@ public class BuyController {
     @Autowired
     BuyService buyService;
 
-    @PostMapping("/{nasdaq}/buy")
-    public Transaction createBid(@RequestBody Transaction transaction, @PathVariable("nasdaq")String nasdaq){
-        return this.buyService.createBid(nasdaq, transaction);
+    @PostMapping("/{userId}/{nasdaq}/buy")
+    public Transaction createBid(@RequestBody Transaction transaction, @PathVariable("nasdaq")String nasdaq, @PathVariable("userId")int userId){
+        return this.buyService.createBid(nasdaq, transaction, userId);
     }
 
 
